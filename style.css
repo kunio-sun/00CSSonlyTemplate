@@ -1,0 +1,230 @@
+@charset "utf-8";
+/* --------start variable 変数宣言------------------------- */
+
+:root {
+  --black: #333;
+  --white: #fafafa;
+  --lightBlue: #cfe0ed;
+  --blue: rgb(64, 113, 194);
+  --darkBlue: rgb(16, 36, 91);
+  --red: #c40006;
+  --fontSS: 1.3rem;
+  --fontS: 1.6rem;
+  --fontM: 2.4rem;
+  --fontL: 3.2rem;
+}
+
+/* ---------------------init style(reset)------------------------ */
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--black);
+}
+
+/*＝＝＝＝＝↑リセットCSS↑＝＝＝＝＝*/
+
+/* ------共通品定義 .wrap .mbS .mbM--------- */
+
+/* ----root em変更(数値は適宜設定)------ */
+
+html {
+  font-size: 82.5%;
+}
+
+@media screen and (max-width:960px) {
+  html {
+    font-size: 67.5%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  html {
+    font-size: 62.5%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+body {
+  color: var(--black);
+  font-family: "游ゴシック体", "Yu Gothic", YuGothic, sans-serif;
+  font-size: var(--fontS);
+  line-height: 1.3;
+}
+
+.wrap {
+  width: 90%;
+  max-width: 840px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  outline: 2px solid var(--blue);
+}
+
+.wrapContainer {
+  width: 85%;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+  /* outline: 1px solid var(--lightBlue); */
+}
+
+.containerPadding {
+  box-sizing: border-box;
+  padding-top: 28px;
+  padding-bottom: 28px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+section {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #f0f0f0;
+}
+
+@media screen and (max-width:720px) {
+  .containerPadding {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .wrapContainer {
+    width: 95%;
+  }
+  section {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .wrap {
+    width: 97%;
+  }
+  .wrapContainer {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width:400px) {
+  .containerPadding {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+.mbS {
+  margin-bottom: 20px;
+}
+
+.mbM {
+  margin-bottom: 40px;
+}
+
+.mbL {
+  margin-bottom: 58px;
+}
+
+.fzM {
+  font-size: var(--fontM);
+}
+
+.fzS {
+  font-size: var(--fontS);
+}
+
+@media screen and (max-width: 720px) {
+  .mbS {
+    margin-bottom: 12px;
+  }
+  .mbM {
+    margin-bottom: 24px;
+  }
+  .mbL {
+    margin-bottom: 28px;
+  }
+}
+
+.heading {
+  font-weight: bold;
+  text-align: center;
+  font-size: var(--fontM);
+  color: var(--lightBlue);
+  -webkit-text-stroke: 1px var(--blue);
+  text-shadow: 1px 1px 0 var(--blue), -1px -1px 0 var(--blue), -1px 1px 0 var(--blue), 1px -1px 0 var(--blue), 0px 1px 0 var(--blue), 0-1px 0 var(--blue), -1px 0 0 var(--blue), 1px 0 0 var(--blue);
+}
+
+.fillHeading {
+  font-weight: bold;
+  font-size: calc(var(--fontM) - 0.6rem);
+  color: var(--white);
+  background-color: var(--blue);
+  text-align: center;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.important {
+  color: var(--red);
+  font-size: var(--fontL);
+  font-family: dnp-shuei-mgothic-std, sans-serif;
+  font-weight: bold;
+}
+
+.underline {
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-bottom: 2px;
+  background: linear-gradient(transparent 70%, rgb(248, 255, 52) 0%);
+}
+
+.inline {
+  display: inline-block;
+}
+
+a {
+  color: var(--black);
+}
