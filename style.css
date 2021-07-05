@@ -64,6 +64,30 @@ a {
 
 /* ----root em変更(数値は適宜設定)------ */
 
+/* 
+コンタクトフォームプラグインスタイル 
+入力チェックエラ〜メッセージ要素 
+*/
+
+.wpcf7-not-valid-tip {
+  color: var(--black) !important;
+  font-size: var(--fontSS) !important;
+}
+
+.wpcf7-not-valid-tip::before {
+  content: "* ";
+  color: var(--red);
+}
+
+/* 入力チェック後メッセージ要素 */
+
+.wpcf7-response-output {
+  margin: 0 0 8px 0!important;
+  padding-top: 6px!important;
+  padding-bottom: 6px!important;
+  font-size: var(--fontSS)!important;
+}
+
 html {
   font-size: 82.5%;
 }
