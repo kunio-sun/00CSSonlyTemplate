@@ -58,6 +58,36 @@
     </div>
   </section>
 
+  <!-- section contact -->
+  <section class="contact" id="contact">
+    <div class="wrap containerPadding contactWrap">
+      <h2 class="heading mbS">お問い合わせ</h2>
+      <p class="mbM contact_paragraph"><span class="inline">必要事項を入力後、</span><span class="inline">送信ボタンを押してください。</span>
+      </p>
+
+      <form action="" class="wrapContainer formTable">
+        <!-- row -->
+        <h3 class="mbS inputTerm"><span class="reqire">必須</span>名前</h3>
+        <input type="text" class="mbS inputArea" required placeholder="田中太郎" />
+        <!-- row -->
+        <h3 class="mbS inputTerm"><span class="reqire">必須</span>電話番号</h3>
+        <!-- 090 0xxx xxxx は存在しない番号 -->
+        <input type="text" class="mbS inputArea" required placeholder="09001234567" />
+        <!-- row -->
+        <h3 class="mbS inputTerm"><span class="reqire">必須</span>メールアドレス</h3>
+        <input type="text" class="mbS inputArea" required placeholder="sample@example.com" />
+        <!-- row -->
+        <h3 class="mbS inputTerm"><span class="any">任意</span>ご質問・面接日など</h3>
+        <input type="text" class="mbS inputArea" placeholder="" />
+        <!-- row -->
+        <h3 class="mbS inputTerm textAreaTerm"><span class="any">任意</span>お問い合わせ内容</h3>
+        <textarea name="textarea" placeholder="こちらに入力" class="mbM inputArea textarea"></textarea>
+
+        <input type="submit" value="送信する" class="submit">
+      </form>
+    </div>
+    <!-- /.wrap -->
+  </section>
 
   <script src="style.js"></script>
 </body>
