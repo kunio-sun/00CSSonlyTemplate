@@ -8,6 +8,9 @@
   --blue: rgb(64, 113, 194);
   --darkBlue: rgb(16, 36, 91);
   --red: #c40006;
+  --accent: var(--blue);
+  --base: var(--white);
+  --main: var(--black);
   --fontSS: 1.3rem;
   --fontS: 1.6rem;
   --fontM: 2.4rem;
@@ -55,12 +58,12 @@ table {
 
 a {
   text-decoration: none;
-  color: var(--black);
+  color: var(--main);
 }
 
 /*＝＝＝＝＝↑リセットCSS↑＝＝＝＝＝*/
 
-/* ------共通品定義 .wrap .mbS .mbM--------- */
+/* ------共通品定義--------- */
 
 /* ----root em変更(数値は適宜設定)------ */
 
@@ -70,7 +73,7 @@ a {
 */
 
 .wpcf7-not-valid-tip {
-  color: var(--black) !important;
+  color: var(--main) !important;
   font-size: var(--fontSS) !important;
 }
 
@@ -111,7 +114,7 @@ html {
 }
 
 body {
-  color: var(--black);
+  color: var(--main);
   font-family: "游ゴシック体", "Yu Gothic", YuGothic, sans-serif;
   font-size: var(--fontS);
   line-height: 1.3;
@@ -123,7 +126,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   box-sizing: border-box;
-  outline: 2px solid var(--blue);
+  outline: 2px solid var(--accent);
 }
 
 .wrapContainer {
@@ -217,18 +220,85 @@ section {
   text-align: center;
   font-size: var(--fontM);
   color: var(--lightBlue);
-  -webkit-text-stroke: 1px var(--blue);
-  text-shadow: 1px 1px 0 var(--blue), -1px -1px 0 var(--blue), -1px 1px 0 var(--blue), 1px -1px 0 var(--blue), 0px 1px 0 var(--blue), 0-1px 0 var(--blue), -1px 0 0 var(--blue), 1px 0 0 var(--blue);
+  -webkit-text-stroke: 1px var(--accent);
+  text-shadow: 1px 1px 0 var(--accent), -1px -1px 0 var(--accent), -1px 1px 0 var(--accent), 1px -1px 0 var(--accent), 0px 1px 0 var(--accent), 0-1px 0 var(--accent), -1px 0 0 var(--accent), 1px 0 0 var(--accent);
 }
 
 .fillHeading {
   font-weight: bold;
   font-size: calc(var(--fontM) - 0.6rem);
-  color: var(--white);
-  background-color: var(--blue);
+  color: var(--base);
+  background-color: var(--accent);
   text-align: center;
   padding-top: 12px;
   padding-bottom: 12px;
+}
+
+.lineBtn, .fillBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+  height: 48px;
+  font-weight: bold;
+}
+
+.fillBtn {
+  background-color: var(--accent);
+  color: var(--base);
+  box-shadow: 2px 2px 6px var(--accent);
+  transition: box-shadow .3s;
+}
+
+@media screen and (max-width:500px) {
+  .lineBtn, .fillBtn {
+    width: 100%;
+  }
+}
+
+.lineBtn:hover, .fillBtn:hover {
+  box-shadow: 1px 1px 1px var(--accent);
+}
+
+.lineBtn {
+  position: relative;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  transition: box-shadow .3s;
+  background-color: transparent;
+  overflow: hidden;
+}
+
+.lineBtn:hover::before, .lineBtn:hover::after {
+  transform: translate(0, 0);
+}
+
+.lineBtn::before, .lineBtn::after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-100%, 0);
+  width: 100%;
+  height: 100%;
+}
+
+.lineBtn::before {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  content: ".lineBtn";
+  color: var(--base);
+  transition: transform .3s;
+}
+
+.lineBtn::after {
+  display: block;
+  content: "";
+  background-color: var(--accent);
+  transition: transform .3s;
 }
 
 .important {
@@ -250,7 +320,51 @@ section {
 }
 
 a {
-  color: var(--black);
+  color: var(--main);
+}
+
+/* ----------company section--------------- */
+
+.companyTable {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.company_term {
+  width: 200px;
+  background-color: var(--main);
+  color: var(--base);
+  text-align: center;
+  margin-bottom: 8px;
+  box-sizing: border-box;
+  line-height: 38px;
+  height: 38px;
+}
+
+.company_description {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: calc(100% - 200px);
+  box-sizing: border-box;
+  padding-left: 4%;
+}
+
+@media screen and (max-width:500px) {
+  .companyTable {
+    border-left: 1px solid var(--gray);
+    border-right: 1px solid var(--gray);
+    border-bottom: 1px solid var(--gray);
+  }
+  .company_term {
+    width: 100%;
+  }
+  .company_description {
+    width: 100%;
+    justify-content: center;
+    padding-left: 0;
+    padding-bottom: 6px;
+  }
 }
 
 /* ------------section contact */
@@ -266,7 +380,7 @@ a {
 }
 
 .reqire, .any {
-  color: var(--white);
+  color: var(--base);
   margin-right: 8px;
   padding-left: 12px;
   padding-right: 12px;
@@ -324,8 +438,8 @@ a {
   margin-left: auto;
   margin-right: auto;
   border: none;
-  background-color: var(--blue);
-  color: var(--white);
+  background-color: var(--accent);
+  color: var(--base);
   cursor: pointer;
   text-align: center;
   transition: transform .3s, box-shadow .3s;
@@ -333,20 +447,20 @@ a {
 
 .submit:hover {
   transform: translate(-2px, -3px);
-  box-shadow: 2px 4px var(--black);
+  box-shadow: 2px 4px var(--main);
 }
 
 /* %%%%%%%%%%% 404ぺーじ %%%%%%%%%%%%%%%%%%%%%%% */
 
 .notFound {
   min-height: 95vh;
-  background-color: var(--blue);
+  background-color: var(--accent);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   font-size: 1.5rem;
-  color: var(--white);
+  color: var(--base);
 }
 
 .notFound_logo {
@@ -355,7 +469,7 @@ a {
 
 .notFound_link {
   text-align: center;
-  color: var(--white);
+  color: var(--base);
   text-decoration: underline;
   transition: opacity .3s;
 }
