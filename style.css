@@ -5,7 +5,7 @@
   --black: #333;
   --white: #fafafa;
   --lightBlue: #cfe0ed;
-  --blue: rgb(64, 113, 194);
+  --blue: #1b7675;
   --darkBlue: rgb(16, 36, 91);
   --red: #c40006;
   --accent: var(--blue);
@@ -222,7 +222,7 @@ section {
   font-weight: bold;
   text-align: center;
   font-size: var(--fontM);
-  color: var(--lightBlue);
+  color: white;
   -webkit-text-stroke: 1px var(--accent);
   text-shadow: 1px 1px 0 var(--accent), -1px -1px 0 var(--accent), -1px 1px 0 var(--accent), 1px -1px 0 var(--accent), 0px 1px 0 var(--accent), 0-1px 0 var(--accent), -1px 0 0 var(--accent), 1px 0 0 var(--accent);
 }
@@ -241,9 +241,8 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: auto;
-  margin-right: auto;
-  width: 300px;
+  padding-left: 40px;
+  padding-right: 40px;
   height: 48px;
   font-weight: bold;
 }
@@ -251,8 +250,7 @@ section {
 .fillBtn {
   background-color: var(--accent);
   color: var(--base);
-  box-shadow: 2px 2px 6px var(--accent);
-  transition: box-shadow .3s;
+  transition: box-shadow .3s, transform .3s;
 }
 
 @media screen and (max-width:500px) {
@@ -262,16 +260,17 @@ section {
 }
 
 .lineBtn:hover, .fillBtn:hover {
-  box-shadow: 1px 1px 1px var(--accent);
+  box-shadow: 2px 2px 6px var(--accent);
+  transform: translateY(-2px);
 }
 
 .lineBtn {
   position: relative;
   border: 1px solid var(--accent);
   color: var(--accent);
-  transition: box-shadow .3s;
   background-color: transparent;
   overflow: hidden;
+  transition: transform .3s, box-shadow .3s;
 }
 
 .lineBtn:hover::before, .lineBtn:hover::after {
@@ -324,6 +323,45 @@ section {
 
 a {
   color: var(--main);
+}
+
+/* ------header-------- */
+
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 6vw;
+  padding-right: 6vw;
+  border-bottom: 1px solid #eee;
+  background-color: white;
+  height: 80px;
+}
+
+.header_logo {
+  height: 60px;
+}
+
+.header_btn {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.header_btn img {
+  width: 28px;
+  margin-right: 8px;
+}
+
+/* -----main */
+
+.main {
+  margin-top: 80px;
 }
 
 /* ----------company section--------------- */
