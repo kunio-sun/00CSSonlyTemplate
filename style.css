@@ -9,7 +9,7 @@
   --darkBlue: rgb(16, 36, 91);
   --red: #c40006;
   --accent: var(--blue);
-  --base: var(--white);
+  --base: #fff;
   --main: var(--black);
   --fontSS: 1.3rem;
   --fontS: 1.6rem;
@@ -61,6 +61,10 @@ a {
   color: var(--main);
 }
 
+::placeholder {
+  color: #ddd;
+}
+
 /*＝＝＝＝＝↑リセットCSS↑＝＝＝＝＝*/
 
 /* ------共通品定義--------- */
@@ -73,7 +77,7 @@ a {
 */
 
 .wpcf7-not-valid-tip {
-  color: var(--main) !important;
+  color: var(--red) !important;
   font-size: var(--fontSS) !important;
 }
 
@@ -85,10 +89,10 @@ a {
 /* 入力チェック後メッセージ要素 */
 
 .wpcf7-response-output {
-  margin: 0 0 8px 0!important;
-  padding-top: 6px!important;
-  padding-bottom: 6px!important;
-  font-size: var(--fontSS)!important;
+  margin: 0 0 8px 0 !important;
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
+  font-size: var(--fontSS) !important;
 }
 
 html {
@@ -116,7 +120,7 @@ html {
 body {
   color: var(--main);
   /* ゴシック */
-  font-family: "游ゴシック体", "Yu Gothic", YuGothic, sans-serif;
+  font-family: 'Noto Sans JP', "游ゴシック体", "Yu Gothic", YuGothic, sans-serif;
   /* 明長 */
   /* font-family:   font-family: "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;  ; */
   font-size: var(--fontS);
@@ -151,7 +155,7 @@ body {
 section {
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color: #f0f0f0;
+
 }
 
 @media screen and (max-width:720px) {
@@ -161,9 +165,11 @@ section {
     padding-left: 16px;
     padding-right: 16px;
   }
+
   .wrapContainer {
     width: 95%;
   }
+
   section {
     padding-top: 32px;
     padding-bottom: 32px;
@@ -174,6 +180,7 @@ section {
   .wrap {
     width: 97%;
   }
+
   .wrapContainer {
     width: 100%;
   }
@@ -210,9 +217,11 @@ section {
   .mbS {
     margin-bottom: 12px;
   }
+
   .mbM {
     margin-bottom: 24px;
   }
+
   .mbL {
     margin-bottom: 28px;
   }
@@ -380,21 +389,73 @@ a {
   .header {
     height: 60px;
   }
+
   .header_logo {
     height: 40px;
   }
+
   .header_btn {
     padding: 10px;
   }
+
   .header_btn img {
     width: 20px;
     margin-right: 0;
   }
+
   .header_btn span {
     display: none;
   }
+
   .main {
     margin-top: 60px;
+  }
+}
+
+/* ----------hero section---------- */
+
+.heroSec {
+  display: flex;
+  align-items: flex-end;
+  background: url(./images/hero_back.jpg) no-repeat;
+  background-size: cover;
+  background-position: center center;
+  min-height: 70vh;
+  overflow: hidden;
+  padding-bottom: 0;
+}
+
+.heroSec .wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 20px;
+  min-height: 50vh;
+}
+
+.hero_text {
+  margin-bottom: 12px;
+  width: 540px;
+  max-width: 90%;
+}
+
+.hero_illust {
+  margin: 12px -24px 0 0;
+  width: 30%;
+  max-width: 280px;
+  align-self: flex-end;
+}
+
+@media screen and (max-width:680px) {
+  .hero_illust {
+    right: -12px;
+    bottom: 0px;
+  }
+}
+
+@media screen and (max-width:500px) {
+  .hero_illust {
+    width: 200px;
   }
 }
 
@@ -432,10 +493,12 @@ a {
     border-right: 1px solid var(--gray);
     border-bottom: 1px solid var(--gray);
   }
+
   .company_term {
     width: 100%;
     margin-bottom: 0;
   }
+
   .company_description {
     width: 100%;
     justify-content: center;
@@ -486,29 +549,50 @@ a {
   align-self: flex-start;
 }
 
-.inputArea {
+.inputArea, .textarea {
   width: calc(100% - 220px);
   box-sizing: border-box;
   padding-left: 4px;
-  height: 26px;
+}
+
+
+.inputArea input, .textarea textarea {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 8px;
+  background-color: transparent;
+  border: 1px solid #ddd;
+  color: var(--main);
+}
+
+.textarea textarea {
+  min-height: 120px;
 }
 
 @media screen and (max-width:720px) {
   .inputTerm {
-    margin-bottom: 4px;
+    margin-bottom: 12px;
   }
+
   .inputArea {
+    width: 100%;
+    padding-left: 0;
+  }
+
+  .textarea {
     width: 100%;
   }
 }
 
-.textarea {
-  padding-top: 4px;
-  padding-left: 6px;
-  height: 160px;
-}
 
 .submit {
+  width: 100%;
+}
+
+.submit input[type="submit"] {
   display: block;
   width: 200px;
   border-radius: 4px;
@@ -524,7 +608,7 @@ a {
   transition: transform .3s, box-shadow .3s;
 }
 
-.submit:hover {
+.submit input[type="submit"]:hover {
   transform: translate(-2px, -3px);
   box-shadow: 2px 4px var(--main);
 }

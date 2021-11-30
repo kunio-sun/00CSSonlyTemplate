@@ -9,6 +9,10 @@
 
   <link rel="stylesheet" href="style.css">
 
+  <!-- noto sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
 
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width">
@@ -16,6 +20,7 @@
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
 </head>
+
 
 <body>
   <header class="header">
@@ -28,6 +33,13 @@
 
   <!-- init style module 書き初めに消去 -->
   <main class="main">
+
+    <section class="heroSec" id="heroSec">
+      <div class="wrap">
+        <img class="hero_text" src="./images/heroText.png" alt="空調設備設計‧施⼯‧設備点検‧修理‧フロン回収 空調設備設計‧施⼯‧設備点検‧修理‧フロン回収">
+        <img src="./images/hero_illust.png" alt="従業員イラスト" class="hero_illust">
+      </div>
+    </section>
 
     <section>
       <h1 class="wrap mbM" style="text-align: center; font-weight: bold;font-size: 2rem;">initialization index.html
@@ -114,7 +126,7 @@
 
   <!-- section contact -->
   <section class="contact" id="contact">
-    <div class="wrap containerPadding contactWrap">
+    <div class="wrap">
       <h2 class="heading mbS">お問い合わせ</h2>
       <p class="mbM contact_paragraph"><span class="inline">必要事項を入力後、</span><span class="inline">送信ボタンを押してください。</span>
       </p>
@@ -122,22 +134,35 @@
       <form action="" class="wrapContainer formTable">
         <!-- row -->
         <h3 class="mbS inputTerm"><span class="reqire">必須</span>名前</h3>
-        <input type="text" class="mbS inputArea" required placeholder="田中太郎" />
+        <p class="mbS inputArea">
+          <input type="text" required placeholder="田中太郎" />
+        </p>
         <!-- row -->
         <h3 class="mbS inputTerm"><span class="reqire">必須</span>電話番号</h3>
         <!-- 090 0xxx xxxx は存在しない番号 -->
-        <input type="text" class="mbS inputArea" required placeholder="09001234567" />
+        <p class="mbS inputArea">
+          <input type="text" required placeholder="09001234567" />
+        </p>
         <!-- row -->
         <h3 class="mbS inputTerm"><span class="reqire">必須</span>メールアドレス</h3>
-        <input type="text" class="mbS inputArea" required placeholder="sample@example.com" />
+        <p class="mbS inputArea">
+          <input type="text" required placeholder="sample@example.com" />
+        </p>
         <!-- row -->
         <h3 class="mbS inputTerm"><span class="any">任意</span>ご質問・面接日など</h3>
-        <input type="text" class="mbS inputArea" placeholder="" />
+        <p class="mbS inputArea">
+          <input type="text" placeholder="" />
+        </p>
         <!-- row -->
         <h3 class="mbS inputTerm textAreaTerm"><span class="any">任意</span>お問い合わせ内容</h3>
-        <textarea name="textarea" placeholder="こちらに入力" class="mbM inputArea textarea"></textarea>
+        <p class="mbM textarea">
+          <textarea name="textarea" placeholder="こちらに入力"></textarea>
+        </p>
 
-        <input type="submit" value="送信する" class="submit">
+        <p class="submit">
+
+          <input type="submit" value="送信する">
+        </p>
       </form>
     </div>
     <!-- /.wrap -->
